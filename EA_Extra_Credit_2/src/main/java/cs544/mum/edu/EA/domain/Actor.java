@@ -18,19 +18,26 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Actor {
 	@Id
 	@GeneratedValue
 	private int actorId;
+	@NotBlank
 	@Column
 	private String firstname;
+	@NotBlank
 	@Column
 	private String lastname;
+	@NotBlank
 	@Column
 	private Date DOB;
+	@NotBlank
 	@Column
 	private String POB;
+	@NotBlank
 	@Column
 	private String biography;
 	

@@ -19,22 +19,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 public class Movie {
 	@Id
 	@GeneratedValue
 	private int movieId;
+	@NotBlank
 	@Column
 	private String title;
+	@NotBlank
 	@Column
 	private String description;
-	@Lob
-	@Column(columnDefinition="mediumblob")
-	private byte[] poster;
 	
 	@OneToMany
 	@JoinTable(name = "movies_genre", joinColumns = @JoinColumn(name = "movieId"),
@@ -62,6 +62,15 @@ public class Movie {
 	@OneToMany(mappedBy = "movie")
 	private List<Role> characters;
 
+	public Movie(){
+		
+	}
+	
+	public Movie(String title, String description){
+		this.title = title;
+		this.description = description;
+	}
+	
 	public int getMovieId() {
 		return movieId;
 	}
@@ -84,14 +93,6 @@ public class Movie {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public byte[] getPoster() {
-		return poster;
-	}
-
-	public void setPoster(byte[] poster) {
-		this.poster = poster;
 	}
 
 	public List<Genre> getGenres() {

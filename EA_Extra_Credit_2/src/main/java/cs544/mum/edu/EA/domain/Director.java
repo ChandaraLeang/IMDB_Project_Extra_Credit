@@ -16,13 +16,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Director {
 	@Id
 	@GeneratedValue
 	private int directorId;
+	@NotBlank
 	@Column
 	private String firstname;
+	@NotBlank
 	@Column
 	private String lastName;
 	

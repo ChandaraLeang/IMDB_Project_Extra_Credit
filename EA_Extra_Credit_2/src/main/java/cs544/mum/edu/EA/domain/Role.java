@@ -14,11 +14,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Role {
 	@Id
 	@GeneratedValue
 	private int characterId;
+	@NotBlank
 	@Column
 	private String name;
 	

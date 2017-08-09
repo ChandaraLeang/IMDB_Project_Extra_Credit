@@ -12,11 +12,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Genre {
 	@Id
 	@GeneratedValue
 	private int genreId;
+	@NotBlank
 	@Column
 	private String name;
 	

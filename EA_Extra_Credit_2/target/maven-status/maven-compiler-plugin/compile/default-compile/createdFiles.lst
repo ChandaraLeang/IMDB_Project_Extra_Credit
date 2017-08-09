@@ -1,1 +1,9 @@
+cs544\mum\edu\EA\domain\Director.class
+cs544\mum\edu\EA\domain\Genre.class
+cs544\mum\edu\EA\controller\MovieController.class
+cs544\mum\edu\EA\domain\Movie.class
+cs544\mum\edu\EA\domain\Actor.class
+cs544\mum\edu\EA\dao\IMovieDao.class
+cs544\mum\edu\EA\dao\MovieDao.class
+cs544\mum\edu\EA\domain\Role.class
 cs544\mum\edu\EA_Extra_Credit_2\App.class
